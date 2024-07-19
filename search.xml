@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2024/07/16/hello-world/</url>
+    <url>/qiuchengju-github.github.io/2024/07/16/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title>编程规范</title>
-    <url>/2024/07/19/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
+    <url>/qiuchengju-github.github.io/2024/07/19/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h1 id="编写代码规范"><a href="#编写代码规范" class="headerlink" title="编写代码规范"></a>编写代码规范</h1><ol>
 <li>每次写完一部分在代码后留出一个空行.便于修改和续写.</li>
 <li>模块化编程,尽量让每个模块的功能单一,不要功能交叉.</li>
