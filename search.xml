@@ -18,12 +18,29 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>分类一</category>
-        <category>分类二</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>标签一</tag>
-        <tag>标签二</tag>
+        <tag>hexo-next 配置使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程规范</title>
+    <url>/2024/07/19/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="编写代码规范"><a href="#编写代码规范" class="headerlink" title="编写代码规范"></a>编写代码规范</h1><ol>
+<li>每次写完一部分在代码后留出一个空行.便于修改和续写.</li>
+<li>模块化编程,尽量让每个模块的功能单一,不要功能交叉.</li>
+</ol>
+<h2 id="代码命名规范"><a href="#代码命名规范" class="headerlink" title="代码命名规范"></a>代码命名规范</h2><ol>
+<li><code>辨识度,详细度,区分度</code>  准确且详细</li>
+</ol>
+<h2 id="文件夹命名"><a href="#文件夹命名" class="headerlink" title="文件夹命名"></a>文件夹命名</h2><p>![[b9539745005e0f2315bdf49a19dbfc72.png]]</p>
+]]></content>
+      <categories>
+        <category>common</category>
+      </categories>
+      <tags>
+        <tag>规范</tag>
       </tags>
   </entry>
 </search>
