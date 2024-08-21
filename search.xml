@@ -48,21 +48,6 @@ domNode.addEventListener(&#39;click&#39;,function()&#123;
       </tags>
   </entry>
   <entry>
-    <title>日记7-28</title>
-    <url>/2024/07/28/%E6%97%A5%E8%AE%B024-7-28/</url>
-    <content><![CDATA[<h1 id="前端日记24-7-28"><a href="#前端日记24-7-28" class="headerlink" title="前端日记24-7-28"></a>前端日记24-7-28</h1><h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><pre><code>会导致整体变透明
-</code></pre>
-<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><pre><code>最后一个参数a 代表透明度。
-</code></pre>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2024/07/16/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -84,6 +69,21 @@ domNode.addEventListener(&#39;click&#39;,function()&#123;
       </categories>
       <tags>
         <tag>hexo-next 配置使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记7-28</title>
+    <url>/2024/07/28/%E6%97%A5%E8%AE%B024-7-28/</url>
+    <content><![CDATA[<h1 id="前端日记24-7-28"><a href="#前端日记24-7-28" class="headerlink" title="前端日记24-7-28"></a>前端日记24-7-28</h1><h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><pre><code>会导致整体变透明
+</code></pre>
+<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><pre><code>最后一个参数a 代表透明度。
+</code></pre>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
       </tags>
   </entry>
   <entry>
