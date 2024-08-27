@@ -116,7 +116,8 @@ function startSakura() {
     "position: fixed;left: 0;top: 0;pointer-events: none;"
   );
   canvas.setAttribute("id", "canvas_sakura");
-  document.getElementsByTagName("body")[0].appendChild(canvas);
+  document.querySelector('body').appendChild(canvas);
+  // document.getElementsByTagName("body")[0].appendChild(canvas);
   cxt = canvas.getContext("2d");
   var sakuraList = new SakuraList();
   for (var i = 0; i < 50; i++) {
