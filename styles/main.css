@@ -38,20 +38,14 @@ body{
 }
 /* 侧边栏公告栏卡片渐变色 */
 #aside-content>.card-widget.card-announcement{
-    background: linear-gradient(-45deg, rgba(255, 225, 245, 0.6), 
-    rgba(255, 225, 225, 0.9), 
-    rgba(225, 255, 251, 0.9), 
-    rgba(255, 225, 255, 0.6));
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 [data-theme=dark] #aside-content>.card-widget.card-announcement{
     background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 /* 侧边栏目录最新文章卡片渐变色 */
 #aside-content>.sticky_layout>.card-widget{
-    background: linear-gradient(-45deg, rgba(255, 225, 245, 0.6), 
-    rgba(255, 225, 225, 0.9), 
-    rgba(225, 255, 251, 0.9), 
-    rgba(255, 225, 255, 0.6));
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 [data-theme=dark] #aside-content>.sticky_layout>.card-widget{
     background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
