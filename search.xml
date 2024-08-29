@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>前端随笔24-8-2</title>
+    <url>/2024/08/02/24-8-2%E5%89%8D%E7%AB%AF%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<h3 id="font-字体属性的简写时"><a href="#font-字体属性的简写时" class="headerlink" title="font 字体属性的简写时"></a>font 字体属性的简写时</h3><p><code>font:italic 700 24px/56px arial, sans-serif;</code><br>第一个<code>font-style</code> 第二个<code>font-weight</code> 第三个<code>font-size/line-height</code>最后是<code>font-family</code>的列表优先级是先后顺序。<br>注意：<code>font-size &amp; font-family</code>不可省略，否则不会生效。</p>
+<h3 id="禁用按钮"><a href="#禁用按钮" class="headerlink" title="禁用按钮"></a>禁用按钮</h3><p><code>cursor:not-allowed;</code>红色禁用标记<br><code>backgroung-clip:text;</code>当背景为渐变色时，文字会有较好的渐变效果。</p>
+<h3 id="动态传值以及页面动态效果开发的最终方案"><a href="#动态传值以及页面动态效果开发的最终方案" class="headerlink" title="动态传值以及页面动态效果开发的最终方案"></a>动态传值以及页面动态效果开发的最终方案</h3><h4 id="关于动态传值问题"><a href="#关于动态传值问题" class="headerlink" title="关于动态传值问题"></a>关于动态传值问题</h4><p>传值问题可以从表单元素的<code>value</code>属性说起，在这个属性中可以储存从后台拿到的值，但是普通的<code>div</code>等页面的元素可以使用自定义数据类型进行动态传值 <code>data-value data-id</code>等 ，要注意这些属性保存的都是字符串，取出时应该用<code>.getAttribute(&#39;data-value&#39;)</code>拿到</p>
+<h4 id="页面动态效果开发"><a href="#页面动态效果开发" class="headerlink" title="页面动态效果开发"></a>页面动态效果开发</h4><p>如果只是用 js 控制<code>style</code>改变的均为内联样式，这种方式在微调方面效果显著，但是这种方式调节的是元素的内联样式，在需要大型的调整或者动大的变化时这种方式并不适用，应该通过调整元素的类名改变。、</p>
+<h5 id="控制元素类名的方式"><a href="#控制元素类名的方式" class="headerlink" title="控制元素类名的方式"></a>控制元素类名的方式</h5><ol>
+<li>通过 className，每个元素的 className 都是，它的类名，改变时可以直接赋值上新的类名，原来的类名将会被覆盖掉，所以常有这样的操作,来追加类名，但是不能将加号换成减号直接使用。<br><code>element.className+=&quot;NewClassName&quot;</code> 2.通过 classList,使用 className 调整类名时还是比较麻烦，所以直接用 classList。<br>(1)通过 ClassList 可以获取元素的全部类名;<br>(2)通过 ClassList.remove()可以删除元素的一个或多个类名；<br>(3)通过 ClassList.add()可以向元素添加一个或多个类名;<br>(4)通过 ClassList.lentgh 可以获取到元素类名的数目；<br>(5)通过 ClassList.item(x)可以获取到元素类名索引为 x 的类名;<br>(6)通过 ClassList.toggle()可以为元素切换类，只能有一个类名;<br>(7)通过 ClassList.contains(x)查看元素是否存在类名为”x”的类;<br>！！！添加删除多个类名时记得是用逗号隔开的参数，不能用空格隔开的类名列表。</li>
+</ol>
+<h3 id="textarea-文本域"><a href="#textarea-文本域" class="headerlink" title="textarea 文本域"></a>textarea 文本域</h3><pre><code>不加处理时用户可以自由拉伸可以加上`resize : none;`取消这个事件。与他自己的闭合标签中不能有任何东西，包括空格。
+</code></pre>
+<h3 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h3><pre><code>设置事件细分有三种方式
+1. 在script标签中
+`&lt;div class=&quot;small&quot; onclick=&quot;(function()&#123;console.log(&#39;第一次点击&#39;)&#125;)()&quot;&gt;domNode&lt;/div&gt;`
+2.快捷绑定
+`&lt;script&gt;domNode.onclick=function()&#123;console.log(&#39;script&#39;)&#125;&lt;/script&gt;`
+3.监听
+``` js
+</code></pre>
+<p>domNode.addEventListener(‘click’,function(){<br>        console.log(‘第一次点击’)<br>    })<br>    domNode.addEventListener(‘click’,function(){<br>        console.log(‘第二次点击’)<br>    })&#96;&#96;&#96;<br>！！！先后顺序与排序相同，第三种可以绑定多个，前面的会造成覆盖。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>前端开发日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>js的数组方法</title>
     <url>/2024/08/29/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS 数组是极为灵活的数据结构，应用极为广泛，在这些封装好的方法帮助下，可以大大提高开发效率，和代码可读性。</p>
@@ -82,48 +111,6 @@
       </tags>
   </entry>
   <entry>
-    <title>日记7-28</title>
-    <url>/2024/07/28/%E6%97%A5%E8%AE%B024-7-28/</url>
-    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
-<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>前端开发日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端随笔24-8-2</title>
-    <url>/2024/08/02/24-8-2%E5%89%8D%E7%AB%AF%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<h3 id="font-字体属性的简写时"><a href="#font-字体属性的简写时" class="headerlink" title="font 字体属性的简写时"></a>font 字体属性的简写时</h3><p><code>font:italic 700 24px/56px arial, sans-serif;</code><br>第一个<code>font-style</code> 第二个<code>font-weight</code> 第三个<code>font-size/line-height</code>最后是<code>font-family</code>的列表优先级是先后顺序。<br>注意：<code>font-size &amp; font-family</code>不可省略，否则不会生效。</p>
-<h3 id="禁用按钮"><a href="#禁用按钮" class="headerlink" title="禁用按钮"></a>禁用按钮</h3><p><code>cursor:not-allowed;</code>红色禁用标记<br><code>backgroung-clip:text;</code>当背景为渐变色时，文字会有较好的渐变效果。</p>
-<h3 id="动态传值以及页面动态效果开发的最终方案"><a href="#动态传值以及页面动态效果开发的最终方案" class="headerlink" title="动态传值以及页面动态效果开发的最终方案"></a>动态传值以及页面动态效果开发的最终方案</h3><h4 id="关于动态传值问题"><a href="#关于动态传值问题" class="headerlink" title="关于动态传值问题"></a>关于动态传值问题</h4><p>传值问题可以从表单元素的<code>value</code>属性说起，在这个属性中可以储存从后台拿到的值，但是普通的<code>div</code>等页面的元素可以使用自定义数据类型进行动态传值 <code>data-value data-id</code>等 ，要注意这些属性保存的都是字符串，取出时应该用<code>.getAttribute(&#39;data-value&#39;)</code>拿到</p>
-<h4 id="页面动态效果开发"><a href="#页面动态效果开发" class="headerlink" title="页面动态效果开发"></a>页面动态效果开发</h4><p>如果只是用 js 控制<code>style</code>改变的均为内联样式，这种方式在微调方面效果显著，但是这种方式调节的是元素的内联样式，在需要大型的调整或者动大的变化时这种方式并不适用，应该通过调整元素的类名改变。、</p>
-<h5 id="控制元素类名的方式"><a href="#控制元素类名的方式" class="headerlink" title="控制元素类名的方式"></a>控制元素类名的方式</h5><ol>
-<li>通过 className，每个元素的 className 都是，它的类名，改变时可以直接赋值上新的类名，原来的类名将会被覆盖掉，所以常有这样的操作,来追加类名，但是不能将加号换成减号直接使用。<br><code>element.className+=&quot;NewClassName&quot;</code> 2.通过 classList,使用 className 调整类名时还是比较麻烦，所以直接用 classList。<br>(1)通过 ClassList 可以获取元素的全部类名;<br>(2)通过 ClassList.remove()可以删除元素的一个或多个类名；<br>(3)通过 ClassList.add()可以向元素添加一个或多个类名;<br>(4)通过 ClassList.lentgh 可以获取到元素类名的数目；<br>(5)通过 ClassList.item(x)可以获取到元素类名索引为 x 的类名;<br>(6)通过 ClassList.toggle()可以为元素切换类，只能有一个类名;<br>(7)通过 ClassList.contains(x)查看元素是否存在类名为”x”的类;<br>！！！添加删除多个类名时记得是用逗号隔开的参数，不能用空格隔开的类名列表。</li>
-</ol>
-<h3 id="textarea-文本域"><a href="#textarea-文本域" class="headerlink" title="textarea 文本域"></a>textarea 文本域</h3><pre><code>不加处理时用户可以自由拉伸可以加上`resize : none;`取消这个事件。与他自己的闭合标签中不能有任何东西，包括空格。
-</code></pre>
-<h3 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h3><pre><code>设置事件细分有三种方式
-1. 在script标签中
-`&lt;div class=&quot;small&quot; onclick=&quot;(function()&#123;console.log(&#39;第一次点击&#39;)&#125;)()&quot;&gt;domNode&lt;/div&gt;`
-2.快捷绑定
-`&lt;script&gt;domNode.onclick=function()&#123;console.log(&#39;script&#39;)&#125;&lt;/script&gt;`
-3.监听
-``` js
-</code></pre>
-<p>domNode.addEventListener(‘click’,function(){<br>        console.log(‘第一次点击’)<br>    })<br>    domNode.addEventListener(‘click’,function(){<br>        console.log(‘第二次点击’)<br>    })&#96;&#96;&#96;<br>！！！先后顺序与排序相同，第三种可以绑定多个，前面的会造成覆盖。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>前端开发日常</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>编程规范</title>
     <url>/2024/07/19/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h2 id="编写代码规范"><a href="#编写代码规范" class="headerlink" title="编写代码规范"></a>编写代码规范</h2><ol>
@@ -140,6 +127,19 @@
       </categories>
       <tags>
         <tag>代码规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记7-28</title>
+    <url>/2024/07/28/%E6%97%A5%E8%AE%B024-7-28/</url>
+    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
+<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>前端开发日常</tag>
       </tags>
   </entry>
 </search>
