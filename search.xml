@@ -33,34 +33,41 @@
     <title>js的数组方法</title>
     <url>/2024/08/29/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS 数组是极为灵活的数据结构，应用极为广泛，在这些封装好的方法帮助下，可以大大提高开发效率，和代码可读性。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol>
-<li><code>arr.push( )</code><br>该方法接收一个或多个参数并将所有的参数按顺序插入数组的末尾。<br>若将数组作为参数传入，不会将传入的数组拆开而是直接加入到原数组中。</li>
-<li><code>arr.forEach(callback )</code><br>该方法接收一个回调函数作为参数 ，</li>
-</ol>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="1-arr-push"><a href="#1-arr-push" class="headerlink" title="1. arr.push( )"></a>1. <code>arr.push( )</code></h3><p>   该方法接收一个或多个参数并将所有的参数按顺序插入数组的末尾。<br>   若将数组作为参数传入，不会将传入的数组拆开而是直接加入到原数组中。</p>
+<h3 id="2-arr-forEach-callback"><a href="#2-arr-forEach-callback" class="headerlink" title="2. arr.forEach(callback )"></a>2. <code>arr.forEach(callback )</code></h3><p>   该方法接收一个回调函数作为参数 ，</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//该方法没有返回值，直接在回调函数内对数组处理即可</span></span><br><span class="line"><span class="comment">//其中回调函数的参数分别是遍历到的当前元素 当前元素的索引 被遍历的数组</span></span><br><span class="line">arr.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">item, index, thisarr</span>) &#123;</span><br><span class="line">  <span class="comment">//处理元素</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li><code>arr.map(callback)</code><br>该方法同样接收一个回调函数作为参数，</li>
-</ol>
+<h3 id="3-arr-map-callback"><a href="#3-arr-map-callback" class="headerlink" title="3. arr.map(callback)"></a>3. <code>arr.map(callback)</code></h3><p>   该方法同样接收一个回调函数作为参数，</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//该方法最后返回一个与原数组相同长度的新数组</span></span><br><span class="line"><span class="comment">//在回调函数内部可以对原数组处理，其中参数与forEach的回调参数相同</span></span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">item, index, thisarr</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<ol start="4">
-<li><code>arr.fliter(callback)</code><br>该方法也接收一个回调函数为参</li>
-</ol>
+<h3 id="4-arr-fliter-callback"><a href="#4-arr-fliter-callback" class="headerlink" title="4. arr.fliter(callback)"></a>4. <code>arr.fliter(callback)</code></h3><p>   该方法也接收一个回调函数为参</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//该方法最后返回一个与原数组相同长度的新数组</span></span><br><span class="line"><span class="comment">//在回调函数内返回一个布尔类型的数据决定当前元素是否返回到新数组中</span></span><br><span class="line"><span class="comment">//，其中参数与forEach的回调参数相同</span></span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">fliter</span>(<span class="keyword">function</span> (<span class="params">item, index, thisarr</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> flag;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li><code>arr.findIndex(callback)</code><br>该方法接收一个回调函数</li>
-</ol>
+<h3 id="5-arr-findIndex-callback"><a href="#5-arr-findIndex-callback" class="headerlink" title="5. arr.findIndex(callback)"></a>5. <code>arr.findIndex(callback)</code></h3><p>   该方法接收一个回调函数</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//该方法最后返回一个查找到元素的索引，找不到返回 -1</span></span><br><span class="line"><span class="comment">//在回调函数内返回一个布尔类型的数据决定当前元素是否找到了元素</span></span><br><span class="line"><span class="comment">//，其中参数与forEach的回调参数相同</span></span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">findIndex</span>(<span class="keyword">function</span> (<span class="params">item, index, thisarr</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> flag;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<ol start="6">
-<li><code>arr.splice(a,b,c )</code><br>该方法接收三个参数，第一个是修改的索引，第二个是将要删除的个数，第三个或更多的元素是在要修改位置插入的，这个方法会原地修改数组。</li>
-<li><code>arr.sort(callback)</code><br>该方法为所有数组元素进行了排序，按照升序或者降序排列。</li>
-</ol>
+<h3 id="6-arr-splice-a-b-c"><a href="#6-arr-splice-a-b-c" class="headerlink" title="6. arr.splice(a,b,c )"></a>6. <code>arr.splice(a,b,c )</code></h3><p>   该方法接收三个参数，第一个是修改的索引，第二个是将要删除的个数，第三个或更多的元素是在要修改位置插入的，这个方法会原地修改数组。</p>
+<h3 id="7-arr-sort-callback"><a href="#7-arr-sort-callback" class="headerlink" title="7. arr.sort(callback)"></a>7. <code>arr.sort(callback)</code></h3><p>   该方法为所有数组元素进行了排序，按照升序或者降序排列。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//回调函数的两个参数是数组相邻的两项</span></span><br><span class="line"><span class="comment">//a-b&lt;0时升序排列</span></span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>8.<code>arr.reverse( )</code><br>   该方法可以直接将数组的元素反转顺序。<br>9. <code>arr.shift( )</code><br>   删除第一个元素并返回该元素。<br>10. <code>arr.pop( )</code><br>    删除末尾元素并返回删除的元素。<br>11. <code>arr.unshift( )</code><br>    在数组起始处添加元素并返回数组长度。<br>12. <code>arr.join( )</code><br>    可以将数组转化为字符串，并将该字符串返回，传入的字符参数会作为里连接符。<br>    参数为字符。<br>13. <code>arr.concat( )</code><br>    传入两个数组合成一个数组并反回新数组。<br>14. <code>arr.slice( )</code><br>    arr.slice(起始索引，结束索引)<br>    包含开始不包含结束。<br>    可以只写一个参数，截取从该元素开始以后的所有元素。<br>    还可以写负参数，代表截取到倒数第几个元素。<br>15. <code>arr.includes( )</code><br>    判断传入的元素是否在数组中。</p>
+<h3 id="8-arr-reverse"><a href="#8-arr-reverse" class="headerlink" title="8. arr.reverse( )"></a>8. <code>arr.reverse( )</code></h3><p>   该方法可以直接将数组的元素反转顺序。</p>
+<h3 id="9-arr-shift"><a href="#9-arr-shift" class="headerlink" title="9. arr.shift( )"></a>9. <code>arr.shift( )</code></h3><p>   删除第一个元素并返回该元素。</p>
+<h3 id="10-arr-pop"><a href="#10-arr-pop" class="headerlink" title="10. arr.pop( )"></a>10. <code>arr.pop( )</code></h3><pre><code>删除末尾元素并返回删除的元素。
+</code></pre>
+<h3 id="11-arr-unshift"><a href="#11-arr-unshift" class="headerlink" title="11. arr.unshift( )"></a>11. <code>arr.unshift( )</code></h3><pre><code>在数组起始处添加元素并返回数组长度。
+</code></pre>
+<h3 id="12-arr-join"><a href="#12-arr-join" class="headerlink" title="12. arr.join( )"></a>12. <code>arr.join( )</code></h3><pre><code>可以将数组转化为字符串，并将该字符串返回，传入的字符参数会作为里连接符。
+参数为字符。
+</code></pre>
+<h3 id="13-arr-concat"><a href="#13-arr-concat" class="headerlink" title="13. arr.concat( )"></a>13. <code>arr.concat( )</code></h3><pre><code>传入两个数组合成一个数组并反回新数组。
+</code></pre>
+<h3 id="14-arr-slice"><a href="#14-arr-slice" class="headerlink" title="14. arr.slice( )"></a>14. <code>arr.slice( )</code></h3><pre><code>arr.slice(起始索引，结束索引)
+包含开始不包含结束。
+可以只写一个参数，截取从该元素开始以后的所有元素。
+还可以写负参数，代表截取到倒数第几个元素。
+</code></pre>
+<h3 id="15-arr-includes"><a href="#15-arr-includes" class="headerlink" title="15. arr.includes( )"></a>15. <code>arr.includes( )</code></h3><pre><code>判断传入的元素是否在数组中。
+</code></pre>
 ]]></content>
       <categories>
         <category>js程序设计</category>
