@@ -30,6 +30,19 @@
       </tags>
   </entry>
   <entry>
+    <title>日记7-28</title>
+    <url>/2024/07/28/%E6%97%A5%E8%AE%B024-7-28/</url>
+    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
+<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>前端开发日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>js的数组方法</title>
     <url>/2024/08/29/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS 数组是极为灵活的数据结构，应用极为广泛，在这些封装好的方法帮助下，可以大大提高开发效率，和代码可读性。</p>
@@ -108,19 +121,6 @@
       </categories>
       <tags>
         <tag>js难点</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日记7-28</title>
-    <url>/2024/07/28/%E6%97%A5%E8%AE%B024-7-28/</url>
-    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
-<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>前端开发日常</tag>
       </tags>
   </entry>
   <entry>
