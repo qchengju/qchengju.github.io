@@ -206,3 +206,9 @@ h6::before {
   -webkit-animation: ccc 6s linear infinite;
   animation: ccc 6s linear infinite;
 }
+
+/*双栏显示文章 翻页按钮居中 */
+#pagination {
+  width: 100%;
+  margin: auto;
+}

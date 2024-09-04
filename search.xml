@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>前端随笔24-8-2</title>
+    <url>/2024/08/31/24-8-2%E5%89%8D%E7%AB%AF%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<h3 id="font-字体属性的简写时"><a href="#font-字体属性的简写时" class="headerlink" title="font 字体属性的简写时"></a>font 字体属性的简写时</h3><p><code>font:italic 700 24px/56px arial, sans-serif;</code><br>第一个<code>font-style</code> 第二个<code>font-weight</code> 第三个<code>font-size/line-height</code>最后是<code>font-family</code>的列表优先级是先后顺序。<br>注意：<code>font-size &amp; font-family</code>不可省略，否则不会生效。</p>
+<h3 id="禁用按钮"><a href="#禁用按钮" class="headerlink" title="禁用按钮"></a>禁用按钮</h3><p><code>cursor:not-allowed;</code>红色禁用标记<br><code>backgroung-clip:text;</code>当背景为渐变色时，文字会有较好的渐变效果。</p>
+<h3 id="动态传值以及页面动态效果开发的最终方案"><a href="#动态传值以及页面动态效果开发的最终方案" class="headerlink" title="动态传值以及页面动态效果开发的最终方案"></a>动态传值以及页面动态效果开发的最终方案</h3><h4 id="关于动态传值问题"><a href="#关于动态传值问题" class="headerlink" title="关于动态传值问题"></a>关于动态传值问题</h4><p>传值问题可以从表单元素的<code>value</code>属性说起，在这个属性中可以储存从后台拿到的值，但是普通的<code>div</code>等页面的元素可以使用自定义数据类型进行动态传值 <code>data-value data-id</code>等 ，要注意这些属性保存的都是字符串，取出时应该用<code>.getAttribute(&#39;data-value&#39;)</code>拿到</p>
+<h4 id="页面动态效果开发"><a href="#页面动态效果开发" class="headerlink" title="页面动态效果开发"></a>页面动态效果开发</h4><p>如果只是用 js 控制<code>style</code>改变的均为内联样式，这种方式在微调方面效果显著，但是这种方式调节的是元素的内联样式，在需要大型的调整或者动大的变化时这种方式并不适用，应该通过调整元素的类名改变。、</p>
+<h5 id="控制元素类名的方式"><a href="#控制元素类名的方式" class="headerlink" title="控制元素类名的方式"></a>控制元素类名的方式</h5><ol>
+<li>通过 className，每个元素的 className 都是，它的类名，改变时可以直接赋值上新的类名，原来的类名将会被覆盖掉，所以常有这样的操作,来追加类名，但是不能将加号换成减号直接使用。<br><code>element.className+=&quot;NewClassName&quot;</code> 2.通过 classList,使用 className 调整类名时还是比较麻烦，所以直接用 classList。<br>(1)通过 ClassList 可以获取元素的全部类名;<br>(2)通过 ClassList.remove()可以删除元素的一个或多个类名；<br>(3)通过 ClassList.add()可以向元素添加一个或多个类名;<br>(4)通过 ClassList.lentgh 可以获取到元素类名的数目；<br>(5)通过 ClassList.item(x)可以获取到元素类名索引为 x 的类名;<br>(6)通过 ClassList.toggle()可以为元素切换类，只能有一个类名;<br>(7)通过 ClassList.contains(x)查看元素是否存在类名为”x”的类;<br>！！！添加删除多个类名时记得是用逗号隔开的参数，不能用空格隔开的类名列表。</li>
+</ol>
+<h3 id="textarea-文本域"><a href="#textarea-文本域" class="headerlink" title="textarea 文本域"></a>textarea 文本域</h3><pre><code>不加处理时用户可以自由拉伸可以加上`resize : none;`取消这个事件。与他自己的闭合标签中不能有任何东西，包括空格。
+</code></pre>
+<h3 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h3><pre><code>设置事件细分有三种方式
+1. 在script标签中
+`&lt;div class=&quot;small&quot; onclick=&quot;(function()&#123;console.log(&#39;第一次点击&#39;)&#125;)()&quot;&gt;domNode&lt;/div&gt;`
+2.快捷绑定
+`&lt;script&gt;domNode.onclick=function()&#123;console.log(&#39;script&#39;)&#125;&lt;/script&gt;`
+3.监听
+``` js
+</code></pre>
+<p>domNode.addEventListener(‘click’,function(){<br>        console.log(‘第一次点击’)<br>    })<br>    domNode.addEventListener(‘click’,function(){<br>        console.log(‘第二次点击’)<br>    })&#96;&#96;&#96;<br>！！！先后顺序与排序相同，第三种可以绑定多个，前面的会造成覆盖。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>前端开发日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记7-28</title>
+    <url>/2024/08/31/%E6%97%A5%E8%AE%B024-7-28/</url>
+    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
+<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>前端开发日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原型和原型链问题探究</title>
+    <url>/2024/08/31/%E5%8E%9F%E5%9E%8B%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>原型知识是前端必不可少的进阶知识之一，掌握好原型知识可以让前端开发中更加游刃有余。</p>
+<h4 id="JS对象"><a href="#JS对象" class="headerlink" title="JS对象"></a>JS对象</h4><p>对象是一种引用或者说是复合的数据结构。展现形式是键值形式，关于对象有很多内容，本节不做深度探究这个问题。主要探究关于原型有关的问题。</p>
+<h4 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>字面量型</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;Jack&quot;</span>,</span><br><span class="line">     <span class="attr">age</span>: <span class="number">26</span></span><br><span class="line">     &#125;</span><br><span class="line"><span class="number">2.</span><span class="title class_">Object</span>构造函数模式</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line"> obj2.<span class="property">name</span> = <span class="string">&quot;Jack&quot;</span></span><br><span class="line"> obj2.<span class="property">age</span> = <span class="number">26</span></span><br><span class="line"><span class="number">3.</span>构造函数模式</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Test</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">say</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我能说话&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Jack&#x27;</span>, <span class="number">26</span>)</span><br><span class="line"><span class="keyword">var</span> obj4 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Rose&#x27;</span>, <span class="number">25</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="原型问题主要是探究构造函数"><a href="#原型问题主要是探究构造函数" class="headerlink" title="原型问题主要是探究构造函数"></a>原型问题主要是探究构造函数</h4><p>在上面那段代码中，Test 就是构造函数，obj3,obj4 是这个构造函数的实例对象，每个对象都有一个特殊的属性就是原型(prototype),(函数也有原型,函数也是对象）</p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><pre><code>1. 显式原型和隐式原型:
+    a. 显式原型用prototype属性表示和查找,这是函数的特有属性,普通对象没有.
+    b. 隐式原型用__proto__属性表示和查找,这是对象的属性,由于函数也是对象,
+    所以每个对象都有这个属性.
+    c. 隐式原型的值指向它构造函数的显式原型的值
+2. Object的原型对象的隐式原型指向null
+3. Function是在浏览器运行时已经创建好了的,是所有的起点.而且它的显式原型与隐式原型相等.
+4. 原型链指的就是隐式原型指向连起来的一条链状结构,在查找时会按照这条链,
+一直向上查找,直到null
+</code></pre>
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p><img src="https://jsd.onmicrosoft.cn/gh/Qchengju/MyPic@img/img/202408291057644.png" alt="原型链"></p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><h6 id="箭头函数出现的意义是什么"><a href="#箭头函数出现的意义是什么" class="headerlink" title="箭头函数出现的意义是什么?"></a>箭头函数出现的意义是什么?</h6><pre><code>(这个问题不在于探究箭头函数的使用问题.)
+箭头函数是ES6中出现的一种简化写法,
+` say=()=&gt;&#123;&#125;`,箭头函数的出现关键是解决了JS中函数的二义性
+在其他面向对象的语言中在开始时就有类的概念,
+在js中函数不仅可以是指令序列,也可能是一个构造函数用来创建对象
+而箭头函数的出现限制了其只能是指令序列而不是构造函数.优化了代码执行
+</code></pre>
+]]></content>
+      <categories>
+        <category>js程序设计</category>
+      </categories>
+      <tags>
+        <tag>js难点</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>js的数组方法</title>
     <url>/2024/08/31/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS 数组是极为灵活的数据结构，应用极为广泛，在这些封装好的方法帮助下，可以大大提高开发效率，和代码可读性。</p>
@@ -45,82 +121,6 @@
       </categories>
       <tags>
         <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日记7-28</title>
-    <url>/2024/08/31/%E6%97%A5%E8%AE%B024-7-28/</url>
-    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
-<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>前端开发日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端随笔24-8-2</title>
-    <url>/2024/08/31/24-8-2%E5%89%8D%E7%AB%AF%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<h3 id="font-字体属性的简写时"><a href="#font-字体属性的简写时" class="headerlink" title="font 字体属性的简写时"></a>font 字体属性的简写时</h3><p><code>font:italic 700 24px/56px arial, sans-serif;</code><br>第一个<code>font-style</code> 第二个<code>font-weight</code> 第三个<code>font-size/line-height</code>最后是<code>font-family</code>的列表优先级是先后顺序。<br>注意：<code>font-size &amp; font-family</code>不可省略，否则不会生效。</p>
-<h3 id="禁用按钮"><a href="#禁用按钮" class="headerlink" title="禁用按钮"></a>禁用按钮</h3><p><code>cursor:not-allowed;</code>红色禁用标记<br><code>backgroung-clip:text;</code>当背景为渐变色时，文字会有较好的渐变效果。</p>
-<h3 id="动态传值以及页面动态效果开发的最终方案"><a href="#动态传值以及页面动态效果开发的最终方案" class="headerlink" title="动态传值以及页面动态效果开发的最终方案"></a>动态传值以及页面动态效果开发的最终方案</h3><h4 id="关于动态传值问题"><a href="#关于动态传值问题" class="headerlink" title="关于动态传值问题"></a>关于动态传值问题</h4><p>传值问题可以从表单元素的<code>value</code>属性说起，在这个属性中可以储存从后台拿到的值，但是普通的<code>div</code>等页面的元素可以使用自定义数据类型进行动态传值 <code>data-value data-id</code>等 ，要注意这些属性保存的都是字符串，取出时应该用<code>.getAttribute(&#39;data-value&#39;)</code>拿到</p>
-<h4 id="页面动态效果开发"><a href="#页面动态效果开发" class="headerlink" title="页面动态效果开发"></a>页面动态效果开发</h4><p>如果只是用 js 控制<code>style</code>改变的均为内联样式，这种方式在微调方面效果显著，但是这种方式调节的是元素的内联样式，在需要大型的调整或者动大的变化时这种方式并不适用，应该通过调整元素的类名改变。、</p>
-<h5 id="控制元素类名的方式"><a href="#控制元素类名的方式" class="headerlink" title="控制元素类名的方式"></a>控制元素类名的方式</h5><ol>
-<li>通过 className，每个元素的 className 都是，它的类名，改变时可以直接赋值上新的类名，原来的类名将会被覆盖掉，所以常有这样的操作,来追加类名，但是不能将加号换成减号直接使用。<br><code>element.className+=&quot;NewClassName&quot;</code> 2.通过 classList,使用 className 调整类名时还是比较麻烦，所以直接用 classList。<br>(1)通过 ClassList 可以获取元素的全部类名;<br>(2)通过 ClassList.remove()可以删除元素的一个或多个类名；<br>(3)通过 ClassList.add()可以向元素添加一个或多个类名;<br>(4)通过 ClassList.lentgh 可以获取到元素类名的数目；<br>(5)通过 ClassList.item(x)可以获取到元素类名索引为 x 的类名;<br>(6)通过 ClassList.toggle()可以为元素切换类，只能有一个类名;<br>(7)通过 ClassList.contains(x)查看元素是否存在类名为”x”的类;<br>！！！添加删除多个类名时记得是用逗号隔开的参数，不能用空格隔开的类名列表。</li>
-</ol>
-<h3 id="textarea-文本域"><a href="#textarea-文本域" class="headerlink" title="textarea 文本域"></a>textarea 文本域</h3><pre><code>不加处理时用户可以自由拉伸可以加上`resize : none;`取消这个事件。与他自己的闭合标签中不能有任何东西，包括空格。
-</code></pre>
-<h3 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h3><pre><code>设置事件细分有三种方式
-1. 在script标签中
-`&lt;div class=&quot;small&quot; onclick=&quot;(function()&#123;console.log(&#39;第一次点击&#39;)&#125;)()&quot;&gt;domNode&lt;/div&gt;`
-2.快捷绑定
-`&lt;script&gt;domNode.onclick=function()&#123;console.log(&#39;script&#39;)&#125;&lt;/script&gt;`
-3.监听
-``` js
-</code></pre>
-<p>domNode.addEventListener(‘click’,function(){<br>        console.log(‘第一次点击’)<br>    })<br>    domNode.addEventListener(‘click’,function(){<br>        console.log(‘第二次点击’)<br>    })&#96;&#96;&#96;<br>！！！先后顺序与排序相同，第三种可以绑定多个，前面的会造成覆盖。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>前端开发日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>原型和原型链问题探究</title>
-    <url>/2024/08/31/%E5%8E%9F%E5%9E%8B%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>原型知识是前端必不可少的进阶知识之一，掌握好原型知识可以让前端开发中更加游刃有余。</p>
-<h4 id="JS对象"><a href="#JS对象" class="headerlink" title="JS对象"></a>JS对象</h4><p>对象是一种引用或者说是复合的数据结构。展现形式是键值形式，关于对象有很多内容，本节不做深度探究这个问题。主要探究关于原型有关的问题。</p>
-<h4 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>字面量型</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;Jack&quot;</span>,</span><br><span class="line">     <span class="attr">age</span>: <span class="number">26</span></span><br><span class="line">     &#125;</span><br><span class="line"><span class="number">2.</span><span class="title class_">Object</span>构造函数模式</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line"> obj2.<span class="property">name</span> = <span class="string">&quot;Jack&quot;</span></span><br><span class="line"> obj2.<span class="property">age</span> = <span class="number">26</span></span><br><span class="line"><span class="number">3.</span>构造函数模式</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Test</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">say</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我能说话&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Jack&#x27;</span>, <span class="number">26</span>)</span><br><span class="line"><span class="keyword">var</span> obj4 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Rose&#x27;</span>, <span class="number">25</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="原型问题主要是探究构造函数"><a href="#原型问题主要是探究构造函数" class="headerlink" title="原型问题主要是探究构造函数"></a>原型问题主要是探究构造函数</h4><p>在上面那段代码中，Test 就是构造函数，obj3,obj4 是这个构造函数的实例对象，每个对象都有一个特殊的属性就是原型(prototype),(函数也有原型,函数也是对象）</p>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><pre><code>1. 显式原型和隐式原型:
-    a. 显式原型用prototype属性表示和查找,这是函数的特有属性,普通对象没有.
-    b. 隐式原型用__proto__属性表示和查找,这是对象的属性,由于函数也是对象,
-    所以每个对象都有这个属性.
-    c. 隐式原型的值指向它构造函数的显式原型的值
-2. Object的原型对象的隐式原型指向null
-3. Function是在浏览器运行时已经创建好了的,是所有的起点.而且它的显式原型与隐式原型相等.
-4. 原型链指的就是隐式原型指向连起来的一条链状结构,在查找时会按照这条链,
-一直向上查找,直到null
-</code></pre>
-<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p><img src="https://jsd.onmicrosoft.cn/gh/Qchengju/MyPic@img/img/202408291057644.png" alt="原型链"></p>
-<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><h6 id="箭头函数出现的意义是什么"><a href="#箭头函数出现的意义是什么" class="headerlink" title="箭头函数出现的意义是什么?"></a>箭头函数出现的意义是什么?</h6><pre><code>(这个问题不在于探究箭头函数的使用问题.)
-箭头函数是ES6中出现的一种简化写法,
-` say=()=&gt;&#123;&#125;`,箭头函数的出现关键是解决了JS中函数的二义性
-在其他面向对象的语言中在开始时就有类的概念,
-在js中函数不仅可以是指令序列,也可能是一个构造函数用来创建对象
-而箭头函数的出现限制了其只能是指令序列而不是构造函数.优化了代码执行
-</code></pre>
-]]></content>
-      <categories>
-        <category>js程序设计</category>
-      </categories>
-      <tags>
-        <tag>js难点</tag>
       </tags>
   </entry>
   <entry>
