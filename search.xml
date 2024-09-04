@@ -30,53 +30,6 @@
       </tags>
   </entry>
   <entry>
-    <title>日记7-28</title>
-    <url>/2024/08/31/%E6%97%A5%E8%AE%B024-7-28/</url>
-    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
-<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>前端开发日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>原型和原型链问题探究</title>
-    <url>/2024/08/31/%E5%8E%9F%E5%9E%8B%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>原型知识是前端必不可少的进阶知识之一，掌握好原型知识可以让前端开发中更加游刃有余。</p>
-<h4 id="JS对象"><a href="#JS对象" class="headerlink" title="JS对象"></a>JS对象</h4><p>对象是一种引用或者说是复合的数据结构。展现形式是键值形式，关于对象有很多内容，本节不做深度探究这个问题。主要探究关于原型有关的问题。</p>
-<h4 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>字面量型</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;Jack&quot;</span>,</span><br><span class="line">     <span class="attr">age</span>: <span class="number">26</span></span><br><span class="line">     &#125;</span><br><span class="line"><span class="number">2.</span><span class="title class_">Object</span>构造函数模式</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line"> obj2.<span class="property">name</span> = <span class="string">&quot;Jack&quot;</span></span><br><span class="line"> obj2.<span class="property">age</span> = <span class="number">26</span></span><br><span class="line"><span class="number">3.</span>构造函数模式</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Test</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">say</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我能说话&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Jack&#x27;</span>, <span class="number">26</span>)</span><br><span class="line"><span class="keyword">var</span> obj4 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Rose&#x27;</span>, <span class="number">25</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="原型问题主要是探究构造函数"><a href="#原型问题主要是探究构造函数" class="headerlink" title="原型问题主要是探究构造函数"></a>原型问题主要是探究构造函数</h4><p>在上面那段代码中，Test 就是构造函数，obj3,obj4 是这个构造函数的实例对象，每个对象都有一个特殊的属性就是原型(prototype),(函数也有原型,函数也是对象）</p>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><pre><code>1. 显式原型和隐式原型:
-    a. 显式原型用prototype属性表示和查找,这是函数的特有属性,普通对象没有.
-    b. 隐式原型用__proto__属性表示和查找,这是对象的属性,由于函数也是对象,
-    所以每个对象都有这个属性.
-    c. 隐式原型的值指向它构造函数的显式原型的值
-2. Object的原型对象的隐式原型指向null
-3. Function是在浏览器运行时已经创建好了的,是所有的起点.而且它的显式原型与隐式原型相等.
-4. 原型链指的就是隐式原型指向连起来的一条链状结构,在查找时会按照这条链,
-一直向上查找,直到null
-</code></pre>
-<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p><img src="https://jsd.onmicrosoft.cn/gh/Qchengju/MyPic@img/img/202408291057644.png" alt="原型链"></p>
-<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><h6 id="箭头函数出现的意义是什么"><a href="#箭头函数出现的意义是什么" class="headerlink" title="箭头函数出现的意义是什么?"></a>箭头函数出现的意义是什么?</h6><pre><code>(这个问题不在于探究箭头函数的使用问题.)
-箭头函数是ES6中出现的一种简化写法,
-` say=()=&gt;&#123;&#125;`,箭头函数的出现关键是解决了JS中函数的二义性
-在其他面向对象的语言中在开始时就有类的概念,
-在js中函数不仅可以是指令序列,也可能是一个构造函数用来创建对象
-而箭头函数的出现限制了其只能是指令序列而不是构造函数.优化了代码执行
-</code></pre>
-]]></content>
-      <categories>
-        <category>js程序设计</category>
-      </categories>
-      <tags>
-        <tag>js难点</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js的数组方法</title>
     <url>/2024/08/31/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS 数组是极为灵活的数据结构，应用极为广泛，在这些封装好的方法帮助下，可以大大提高开发效率，和代码可读性。</p>
@@ -140,6 +93,53 @@
       </categories>
       <tags>
         <tag>代码规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原型和原型链问题探究</title>
+    <url>/2024/08/31/%E5%8E%9F%E5%9E%8B%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>原型知识是前端必不可少的进阶知识之一，掌握好原型知识可以让前端开发中更加游刃有余。</p>
+<h4 id="JS对象"><a href="#JS对象" class="headerlink" title="JS对象"></a>JS对象</h4><p>对象是一种引用或者说是复合的数据结构。展现形式是键值形式，关于对象有很多内容，本节不做深度探究这个问题。主要探究关于原型有关的问题。</p>
+<h4 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>字面量型</span><br><span class="line">  <span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;Jack&quot;</span>,</span><br><span class="line">     <span class="attr">age</span>: <span class="number">26</span></span><br><span class="line">     &#125;</span><br><span class="line"><span class="number">2.</span><span class="title class_">Object</span>构造函数模式</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line"> obj2.<span class="property">name</span> = <span class="string">&quot;Jack&quot;</span></span><br><span class="line"> obj2.<span class="property">age</span> = <span class="number">26</span></span><br><span class="line"><span class="number">3.</span>构造函数模式</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Test</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">say</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我能说话&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Jack&#x27;</span>, <span class="number">26</span>)</span><br><span class="line"><span class="keyword">var</span> obj4 = <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="string">&#x27;Rose&#x27;</span>, <span class="number">25</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="原型问题主要是探究构造函数"><a href="#原型问题主要是探究构造函数" class="headerlink" title="原型问题主要是探究构造函数"></a>原型问题主要是探究构造函数</h4><p>在上面那段代码中，Test 就是构造函数，obj3,obj4 是这个构造函数的实例对象，每个对象都有一个特殊的属性就是原型(prototype),(函数也有原型,函数也是对象）</p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><pre><code>1. 显式原型和隐式原型:
+    a. 显式原型用prototype属性表示和查找,这是函数的特有属性,普通对象没有.
+    b. 隐式原型用__proto__属性表示和查找,这是对象的属性,由于函数也是对象,
+    所以每个对象都有这个属性.
+    c. 隐式原型的值指向它构造函数的显式原型的值
+2. Object的原型对象的隐式原型指向null
+3. Function是在浏览器运行时已经创建好了的,是所有的起点.而且它的显式原型与隐式原型相等.
+4. 原型链指的就是隐式原型指向连起来的一条链状结构,在查找时会按照这条链,
+一直向上查找,直到null
+</code></pre>
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p><img src="https://jsd.onmicrosoft.cn/gh/Qchengju/MyPic@img/img/202408291057644.png" alt="原型链"></p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><h6 id="箭头函数出现的意义是什么"><a href="#箭头函数出现的意义是什么" class="headerlink" title="箭头函数出现的意义是什么?"></a>箭头函数出现的意义是什么?</h6><pre><code>(这个问题不在于探究箭头函数的使用问题.)
+箭头函数是ES6中出现的一种简化写法,
+` say=()=&gt;&#123;&#125;`,箭头函数的出现关键是解决了JS中函数的二义性
+在其他面向对象的语言中在开始时就有类的概念,
+在js中函数不仅可以是指令序列,也可能是一个构造函数用来创建对象
+而箭头函数的出现限制了其只能是指令序列而不是构造函数.优化了代码执行
+</code></pre>
+]]></content>
+      <categories>
+        <category>js程序设计</category>
+      </categories>
+      <tags>
+        <tag>js难点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记7-28</title>
+    <url>/2024/08/31/%E6%97%A5%E8%AE%B024-7-28/</url>
+    <content><![CDATA[<h2 id="展示透明背景"><a href="#展示透明背景" class="headerlink" title="展示透明背景"></a>展示透明背景</h2><h3 id="1-设置-opacity透明度属性"><a href="#1-设置-opacity透明度属性" class="headerlink" title="1.设置 opacity透明度属性"></a>1.设置 <code>opacity</code>透明度属性</h3><p>会导致整体变透明</p>
+<h3 id="2-设置rgba-背景颜色"><a href="#2-设置rgba-背景颜色" class="headerlink" title="2.设置rgba 背景颜色"></a>2.设置<code>rgba 背景颜色</code></h3><p>最后一个参数a 代表透明度。</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>前端开发日常</tag>
       </tags>
   </entry>
 </search>
