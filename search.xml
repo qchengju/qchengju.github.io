@@ -77,25 +77,6 @@
       </tags>
   </entry>
   <entry>
-    <title>编程规范</title>
-    <url>/2024/08/31/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h2 id="编写代码规范"><a href="#编写代码规范" class="headerlink" title="编写代码规范"></a>编写代码规范</h2><ol>
-<li>每次写完一部分在代码后留出一个空行.便于修改和续写.</li>
-<li>模块化编程,尽量让每个模块的功能单一,不要功能交叉.</li>
-</ol>
-<h2 id="代码命名规范"><a href="#代码命名规范" class="headerlink" title="代码命名规范"></a>代码命名规范</h2><ol>
-<li><code>辨识度,详细度,区分度</code>  准确且详细</li>
-<li>类名使用大驼峰命名,变量等使用小驼峰命名或者下划线命名</li>
-</ol>
-<h2 id="文件夹命名"><a href="#文件夹命名" class="headerlink" title="文件夹命名"></a>文件夹命名</h2>]]></content>
-      <categories>
-        <category>public</category>
-      </categories>
-      <tags>
-        <tag>代码规范</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>原型和原型链问题探究</title>
     <url>/2024/08/31/%E5%8E%9F%E5%9E%8B%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>原型知识是前端必不可少的进阶知识之一，掌握好原型知识可以让前端开发中更加游刃有余。</p>
@@ -127,6 +108,25 @@
       </categories>
       <tags>
         <tag>js难点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程规范</title>
+    <url>/2024/08/31/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h2 id="编写代码规范"><a href="#编写代码规范" class="headerlink" title="编写代码规范"></a>编写代码规范</h2><ol>
+<li>每次写完一部分在代码后留出一个空行.便于修改和续写.</li>
+<li>模块化编程,尽量让每个模块的功能单一,不要功能交叉.</li>
+</ol>
+<h2 id="代码命名规范"><a href="#代码命名规范" class="headerlink" title="代码命名规范"></a>代码命名规范</h2><ol>
+<li><code>辨识度,详细度,区分度</code>  准确且详细</li>
+<li>类名使用大驼峰命名,变量等使用小驼峰命名或者下划线命名</li>
+</ol>
+<h2 id="文件夹命名"><a href="#文件夹命名" class="headerlink" title="文件夹命名"></a>文件夹命名</h2>]]></content>
+      <categories>
+        <category>public</category>
+      </categories>
+      <tags>
+        <tag>代码规范</tag>
       </tags>
   </entry>
   <entry>
