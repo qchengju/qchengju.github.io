@@ -72,3 +72,9 @@
     min-height: 40px;
   }
 }
+
+
+/* 隐藏首页 banner 中央的大标题 */
+#page-header #site-info {
+  display: none !important;
+}
